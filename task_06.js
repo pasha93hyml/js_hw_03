@@ -9,7 +9,7 @@ const calculateTotalPrice = function (allProdcuts, productName) {
   for (let obj of allProdcuts) {
     let values = Object.values(obj);
     if (values.includes(productName)) {
-      return values[1] * values[2];
+      return obj.price * obj.quantity;
     }
   }
 };
