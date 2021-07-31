@@ -1,9 +1,8 @@
 const findBestEmployee = function (employees) {
-  let arr = Object.entries(employees),
-    maxValue = Math.max(...Object.values(employees));
-  for (let key of arr) {
-    if (key[1] === maxValue) return key[0];
-  }
+  let keys = Object.keys(employees),
+      values = Object.values(employees);
+  return keys[values.indexOf(Math.max(...values))]
+
 };
 
 console.log(
@@ -14,6 +13,8 @@ console.log(
     lorence: 99,
   })
 ); // lorence
+
+
 console.log(
   findBestEmployee({
     poly: 12,
